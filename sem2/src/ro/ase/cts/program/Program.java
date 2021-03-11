@@ -3,6 +3,7 @@ import java.io.FileNotFoundException;
 import java.util.List;
 import ro.ase.cts.clase.Angajat;
 import ro.ase.cts.clase.Aplicant;
+import ro.ase.cts.clase.Proiect;
 import ro.ase.cts.clase.Student;
 import ro.ase.cts.clase.UniversalReader;
 import ro.ase.cts.clase.readers.AngajatReader;
@@ -17,7 +18,9 @@ public class Program {
 			for(Aplicant aplicant:listaAplicanti) {
 				System.out.println(aplicant.toString());
 				System.out.println("Suma finantata: " + aplicant.getSumaFinantata());
+				aplicant.afisareStatusInProiect(new Proiect(aplicant.getPunctaj()));
 			}
+			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
