@@ -28,9 +28,8 @@ public class StudentReader extends Reader {
 			int an_studii = input.nextInt();
 			String facultate = (input.next()).toString();
 			
-			student.setAn_studii(an_studii);
+			student.setAnStudii(an_studii);
 			student.setFacultate(facultate);
-			
 			studenti.add(student);
 		}
 		input.close();

@@ -7,14 +7,9 @@ public class Angajat extends Aplicant{
 	private int salariu;
 	private static int sumaFinantata = 10;
 	
-	public String getOcupatie() {
-		return ocupatie;
-	}
+
 	public void setOcupatie(String ocupatie) {
 		this.ocupatie = ocupatie;
-	}
-	public int getSalariu() {
-		return salariu;
 	}
 	public void setSalariu(int salariu) {
 		this.salariu = salariu;
@@ -26,9 +21,7 @@ public class Angajat extends Aplicant{
 	}
 	public Angajat() {
 		super();
-		
 	}
-	
 	
 	@Override
 	public String toString() {
@@ -36,7 +29,6 @@ public class Angajat extends Aplicant{
 		str.append(super.toString()).append(" Ocupatie=").append(ocupatie).append(", salariu= ").append(salariu);
 		return str.toString();
 	}
-	
 	
 	@Override
 	public float getSumaFinantata() {

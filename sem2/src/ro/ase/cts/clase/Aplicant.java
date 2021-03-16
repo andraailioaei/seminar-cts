@@ -7,24 +7,15 @@ public abstract class Aplicant{
 	protected String prenume;
 	protected int varsta;
 	protected int punctaj;
-	protected int nr_proiecte;
+	protected int nrProiecte;
 	protected String[] denumireProiect;
 	
 	
-	public String getNume() {
-		return nume;
-	}
 	public void setNume(String nume) {
 		this.nume = nume;
 	}
-	public String getPrenume() {
-		return prenume;
-	}
 	public void setPrenume(String prenume) {
 		this.prenume = prenume;
-	}
-	public int getVarsta() {
-		return varsta;
 	}
 	public void setVarsta(int varsta) {
 		this.varsta = varsta;
@@ -44,9 +35,6 @@ public abstract class Aplicant{
 		this.punctaj = punctaj;
 	}
 	
-	
-
-	
 	public Aplicant() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -57,33 +45,19 @@ public abstract class Aplicant{
 		this.prenume = prenume;
 		this.varsta = varsta;
 		this.punctaj = punctaj;
-		this.nr_proiecte = nr_proiecte;
-		this.denumireProiect = denumireProiect;
-	}
-	public int getNr_proiecte() {
-		return nr_proiecte;
-	}
-	public void setNr_proiecte(int nr_proiecte) {
-		this.nr_proiecte = nr_proiecte;
-	}
-
-	public String[] getDenumireProiect() {
-		return denumireProiect;
-	}
-	public void setDenumireProiect(String[] denumireProiect) {
+		this.nrProiecte = nr_proiecte;
 		this.denumireProiect = denumireProiect;
 	}
 	
 	public void setDenumiriProiecte(int nr_proiecte,String[] denumireProiect) {
-		this.nr_proiecte = nr_proiecte;
+		this.nrProiecte = nr_proiecte;
 		this.denumireProiect = denumireProiect;
 	}
-	
 	
 	@Override
 	public String toString() {
 		return "nume=" + nume + ", prenume=" + prenume + ", varsta=" + varsta + ", punctaj=" + punctaj
-				+ ", nr_proiecte=" + nr_proiecte + ", denumireProiect=" + Arrays.toString(denumireProiect);
+				+ ", nr_proiecte=" + nrProiecte + ", denumireProiect=" + Arrays.toString(denumireProiect);
 	}
 	public abstract float getSumaFinantata();
 	

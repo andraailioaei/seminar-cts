@@ -6,25 +6,18 @@ public class Elev extends Aplicant{
 	private String tutore;
 	private static int sumaFinantata = 30;
 	
-	public int getClasa() {
-		return clasa;
-	}
 	public void setClasa(int i) {
 		this.clasa = i;
-	}
-	public String getTutore() {
-		return tutore;
 	}
 	public void setTutore(String tutore) {
 		this.tutore = tutore;
 	}
 	
-	
 	@Override
 	public String toString() {
 		
 		StringBuilder str = new StringBuilder("Elevul: ");
-		str.append(super.toString()).append(" Clasa=").append(clasa).append(", Tutore= ").append(tutore);
+		str.append(super.toString()).append(" Clasa= ").append(clasa).append(", Tutore= ").append(tutore);
 		return str.toString();
 	}
 	

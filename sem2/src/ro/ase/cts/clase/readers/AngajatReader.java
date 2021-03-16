@@ -10,27 +10,25 @@ import ro.ase.cts.clase.Angajat;
 import ro.ase.cts.clase.Aplicant;
 public class AngajatReader extends Reader {
 	
-	
-	
 	public AngajatReader(String fileName) {
 		super(fileName);
 	}
 
 	public  List<Aplicant> readAplicants() throws FileNotFoundException {
-		Scanner input2 = new Scanner(new File(super.fileName));
-		input2.useDelimiter(",");
+		Scanner input = new Scanner(new File(super.fileName));
+		input.useDelimiter(",");
 		List<Aplicant> angajati = new ArrayList<Aplicant>();
 
-		while (input2.hasNext()) {
+		while (input.hasNext()) {
 			Angajat a = new Angajat();
-			super.readAplicant(a, input2);
-			int salariu = input2.nextInt();
-			String ocupatie = input2.next();
+			super.readAplicant(a, input);
+			int salariu = input.nextInt();
+			String ocupatie = input.next();
 			a.setSalariu(salariu);
 			a.setOcupatie(ocupatie);
 			angajati.add(a);
 		}
-		input2.close();
+		input.close();
 		return angajati;
 	}
 }
