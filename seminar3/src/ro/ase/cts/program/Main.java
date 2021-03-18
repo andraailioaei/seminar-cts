@@ -1,5 +1,6 @@
 package ro.ase.cts.program;
 
+import ro.ase.cts.clase.Alfabet;
 import ro.ase.cts.clase.Manager;
 import ro.ase.cts.clase.ManagerLazy;
 
@@ -20,6 +21,13 @@ public class Main {
 		managerLazy2.setVarsta(55);
 		System.out.println(managerLazy1.toString());
 		System.out.println(managerLazy2.toString());
+		
+		
+		Alfabet alfabet1 = Alfabet.getInstance("latin", 31, true);
+		Alfabet alfabet2 = Alfabet.getInstance("fenician", 22, false);
+		System.out.println(alfabet1.toString());
+		System.out.println(alfabet2.toString());
+		//Alfabet alfabet3 = new Alfabet("roman", 31, true);
 	}
 
 }
