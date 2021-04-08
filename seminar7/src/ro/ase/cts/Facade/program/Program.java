@@ -9,8 +9,8 @@ import ro.ase.cts.Facade.clase.Politie;
 public class Program {
 
 	public static void main(String[] args) {
-		Persoana p1 = new Persoana("Mihai", "1992365412589");
-		Bilet b1 = new Bilet("Alexandra", "12B");
+		Persoana p1 = new Persoana("Mihai", "1992365412588");
+		Bilet b1 = new Bilet("Mihai", "12B");
 		
 //		if(p1.getNume().equals(b1.getNume())) {
 //			if(!Politie.esteUrmarita(p1))
@@ -21,9 +21,9 @@ public class Program {
 //			}
 //		}
 		
-		Persoana p2 = new Persoana("Ioan", "1995465419689");
-		Bilet bb = new Bilet("Ioana", "11A");
-		if(Facade.verifica(p1, b1))
+		Persoana p2 = new Persoana("Ioan", "1995465419688");
+		Bilet bb = new Bilet("Ioan", "11A");
+		if(Facade.verifica(p2, bb))
 			System.out.println("Puteti intra :)");
 		else
 			System.out.println("Ne pare rau, nu puteti intra :(");
