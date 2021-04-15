@@ -1,16 +1,17 @@
 package ro.ase.cts.composite.clase;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Sectiune implements ComponentaMeniu{
 	
 	private String nume;
-	private List<ComponentaMeniu> listaComponente;
+	private List<ComponentaMeniu> listaComponente ;
 	
 	public Sectiune(String nume) {
 		super();
 		this.nume = nume;
-		this.listaComponente = listaComponente;
+		this.listaComponente = new ArrayList<ComponentaMeniu>();
 	}
 
 	@Override
