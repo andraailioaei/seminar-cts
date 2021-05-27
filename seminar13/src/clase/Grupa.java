@@ -41,13 +41,18 @@ public class Grupa {
 	}
 
 	public float getPromovabilitate(){
-        int nrRestantieri=0;
-        for(IStudent student:studenti){
-            if(student.areRestante()){
-                nrRestantieri++;
-            }
-        }
-        return studenti.size()/nrRestantieri;
+		if(studenti.size()!=0) {
+	        int nrRestantieri=0;
+	        for(IStudent student:studenti){
+	            if(student.areRestante()){
+	                nrRestantieri++;
+	            }
+	        }
+	       
+	        return 1 - ((float)nrRestantieri)/studenti.size();}
+        else {
+			throw new IllegalArgumentException();
+		}
     }
     
     
