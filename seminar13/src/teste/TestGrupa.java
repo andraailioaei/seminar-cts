@@ -4,9 +4,13 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import clase.Grupa;
 import clase.Student;
+import teste.categorii.TesteGetPromovabilitate;
+import teste.categorii.TesteNormale;
+import teste.categorii.TesteUrgente;
 
 public class TestGrupa {
 
@@ -25,6 +29,7 @@ public class TestGrupa {
 	}
 	
 	@Test
+	@Category(TesteGetPromovabilitate.class) 
 	public void testPromovabilitateRight() {
 		Student s1 = new Student("Ion");
 		s1.adaugaNota(8);
@@ -40,12 +45,14 @@ public class TestGrupa {
 	}
 	
 	@Test
+	@Category({TesteGetPromovabilitate.class, TesteUrgente.class}) 
 	public void testPromovabilitateLimitaInferioara() {
 		
 		assertEquals(0, grupa.getPromovabilitate(), 0.05);
 	}
 	
 	@Test
+	@Category({TesteGetPromovabilitate.class, TesteNormale.class}) 
 	public void testPromovabilitateLimitaSuperioara() {
 		Grupa grupaNoua= new Grupa(1003);
 		Student s1 = new Student("Ion");
@@ -66,12 +73,14 @@ public class TestGrupa {
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
+	@Category(TesteGetPromovabilitate.class) 
 	public void testPromovabilitateErrorInferior() {
 		Grupa grupa2= new Grupa(1040);
 		grupa2.getPromovabilitate();
 	}
 	
 	@Test(timeout = 500)
+	@Category(TesteGetPromovabilitate.class) 
 	public void testPromovabilitatePerformance() {
 		grupa.getPromovabilitate();
 		
@@ -84,6 +93,7 @@ public class TestGrupa {
 	}
 	
 	@Test
+	@Category(TesteUrgente.class) 
 	public void testLimitaInferioara() {
 		Grupa grupa= new Grupa(1000);
 		
@@ -91,6 +101,7 @@ public class TestGrupa {
 	}
 	
 	@Test
+	@Category(TesteUrgente.class) 
 	public void testLimitaSuperioara() {
 		Grupa grupa= new Grupa(1100);
 		assertEquals(1100, grupa.getNrGrupa());
@@ -106,12 +117,14 @@ public class TestGrupa {
 	}
 	
 	@Test(timeout = 500)
+	@Category(TesteNormale.class) 
 	public void testConstructorPerformance() {
 		Grupa grupa= new Grupa(1000);
 		
 	}
 	
 	@Test
+	@Category(TesteNormale.class) 
 	public void testConstructorExistence() {
 		Grupa grupa1= new Grupa(1100);
 		assertNotNull(grupa1.getStudenti());
